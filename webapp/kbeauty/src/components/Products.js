@@ -22,7 +22,7 @@ const Products = (props) => {
                 </div>
                 <div className="flex px-2 pb-2">
                     <div>
-                        <Link to={`product/${product.id}`}>
+                        <Link to={`/product/${product.id}`}>
                     <h3 className="text-sm font-medium text-gray-800">
                         
                         <span aria-hidden="true" className="absolute inset-0" />

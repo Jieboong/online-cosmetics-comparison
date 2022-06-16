@@ -8,11 +8,14 @@ import Footer from "./Footer";
 
 
 
+
+
 function MainPage() {
   const [category, setCategory] = useState(null)
   const [products, setProducts] = useState([])
   const [searchproduct, setSearchProduct] = useState([])
   const [searchItem, setSearchItem] = useState(false)
+  const [isLoading, setLoading] = useState(false)
 
   
   const handleSearch = (item) => {
@@ -29,20 +32,21 @@ function MainPage() {
   }
     
     useEffect(()=>{
-        fetch("http://172.30.1.51:3000/api/category").then(response => {
+        fetch("http://3.34.179.67:3000/api/category").then(response => {
             return response.json()}).then((data)=> {setCategory(data)})
     },[])
 
     useEffect(()=>{
-      fetch("http://172.30.1.51:3000/api/products").then(response => {
-          return response.json()}).then((data)=> {setProducts(data)})
+      fetch("http://3.34.179.67:3000/api/products").then(response => {
+          return response.json()}).then((data)=> {setProducts(data)
+          setLoading(true)})
   },[])
 
   return (
     <>
     <Navbar handleSearch = {handleSearch} searchItem={searchItem} homepage={true}/>
     <Sidebar category={category}/>
-    <Home products={products} searchproduct = {searchproduct} searchItem={searchItem} handleSearch = {handleSearch}/>
+    <Home products={products} loading={isLoading} searchproduct = {searchproduct} searchItem={searchItem} handleSearch = {handleSearch}/>
     <Footer></Footer>
     </>
 

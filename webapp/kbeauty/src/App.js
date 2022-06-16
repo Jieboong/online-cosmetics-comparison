@@ -4,7 +4,7 @@ import MainPage from "./components/Main";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Category from "./components/category/Category";
 import DetailPage from "./components/DetailPage";
-import Navbar from "./components/Navbar";
+
 
 function App() {
   return (
