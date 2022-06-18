@@ -35,8 +35,12 @@ code
 
 ### Data Storage
 
-- HDFS
-
+- HDFS Cluster Settings
+```
+hadoop namenode -format
+./sbin/start-all.sh
+```
+- HDFS put files
 ```
 hdfs dfs -put {$filename} /input
 hdfs dfs -ls /input
