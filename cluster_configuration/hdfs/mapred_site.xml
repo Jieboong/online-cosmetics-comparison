@@ -1,0 +1,6 @@
+<configuration>
+	<property>
+		<name>mapred.framework.name</name>
+		<value>yarn</name>
+	</property>
+</configuration>
