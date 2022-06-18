@@ -18,7 +18,12 @@ $ git clone https://github.com/philip-lee-khu/2022-01-PROJECT-GROUP4.git
 - Web page
 
 ```
-code
+## Run Server at kbeauty_api
+webapp/kbeauty_api$ node app.js
+
+## Run Web Page at kbeauty
+webapp/kbeauty$ npm install
+webapp/kbeauty$ npm start
 ```
 
 ## Data Processing
@@ -51,8 +56,12 @@ code
 
 ### 2. Data Storage
 
-- HDFS
-
+- HDFS Cluster Settings
+```
+hadoop namenode -format
+./sbin/start-all.sh
+```
+- HDFS put files
 ```
 hdfs dfs -put {$filename} /input
 hdfs dfs -ls /input
