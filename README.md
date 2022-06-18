@@ -114,7 +114,7 @@ spark-submit ${pyspark file} --master yarn --deploy-mode cluster --executor-memo
 
 ![image](https://user-images.githubusercontent.com/47781507/174441825-8b8e2bb6-fd6a-4203-8d0e-6780b19b1a8f.png)
 
-> 상세페이지(가격 변동 그래프, 유사 상품 추천)
+> 상세페이지(화장품 키워드, 가격 변동 그래프, 유사 화장품 추천)
 
 ## Scrum
 
