@@ -38,7 +38,8 @@ code
 - HDFS
 
 ```
-configuration code
+hdfs dfs -put {$filename} /input
+hdfs dfs -ls /input
 ```
 
 ### Data Analysis
@@ -46,7 +47,7 @@ configuration code
 - Using Pyspark
 
 ```
-configuration code
+spark-submit ${pyspark file} --master yarn --deploy-mode cluster --executor-memory 512m --driver-memory 512m
 ```
 
 ### Web Page
@@ -70,4 +71,4 @@ http://3.34.179.67:8080/
 
 ### Notion
 
-{notion link}
+[notion link](https://sprinkle-rodent-a50.notion.site/Online-Cosmetics-Price-Comparison-204ec4397cac49cf8ea07e735db09b6f)
