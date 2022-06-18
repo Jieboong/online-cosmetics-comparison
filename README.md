@@ -33,41 +33,51 @@ webapp/kbeauty$ npm start
 - Data Crawling
 
   ![image](https://user-images.githubusercontent.com/47781507/174441677-6b31796c-c271-4838-a167-9188f81f97a8.png)
+
   - Coupang
     - 언어: Python
     - 주요 라이브러리: `BeautifulSoup`, `requests`, `pandas`, `re`
     - 각 카테고리(Depth 2까지 - 대분류, 소분류) 별 모든 페이지 링크에 `requests`로 접근하여 상품 정보 parsing
-***
-  ![image](https://user-images.githubusercontent.com/47781507/174441644-4a5524aa-616c-4b80-8b0a-0e0af2a911f6.png)
-  - Musinsa
-    - 언어: Python
-    - 주요 라이브러리: `BeautifulSoup`, `requests`, `json`, `multiprocessing`, `contextlib`
-    - json 형식으로 모든 상품 링크 저장
-    - 각 링크에 `requests`로 접근하여 상품 정보 parsing
-    - `multiprocessing`으로 크롤링 속도 개선
-***
-  ![image](https://user-images.githubusercontent.com/47781507/174441656-32215742-8d0a-4a11-a3b7-e92873144bb4.png)
-  - Olive Young
-    - 언어: Python
-    - 주요 라이브러리: `BeautifulSoup`, `selenium`, `requests`, `json`
-    - 각 카테고리 `selenium`으로 접근하여 json 형식으로 저장
-    - 상품 데이터만으로 용량이 부족하여 후기가 가장 활성화된 올리브영에서 comment 정보 parsing
 
-  - Olive Young Comment
-    - 언어 : Python
-    - 주요 라이브러리 : 'selenium', 'json'
-    - 각 카테고리 상위 품목을 'selenium'으로 접근해 상품 번호와 줄글 리뷰 저장
-    - 크롤링 시간 고려해 각 상품당 최대 300개의 리뷰 크롤링
+---
 
+![image](https://user-images.githubusercontent.com/47781507/174441644-4a5524aa-616c-4b80-8b0a-0e0af2a911f6.png)
+
+- Musinsa
+  - 언어: Python
+  - 주요 라이브러리: `BeautifulSoup`, `requests`, `json`, `multiprocessing`, `contextlib`
+  - json 형식으로 모든 상품 링크 저장
+  - 각 링크에 `requests`로 접근하여 상품 정보 parsing
+  - `multiprocessing`으로 크롤링 속도 개선
+
+---
+
+![image](https://user-images.githubusercontent.com/47781507/174441656-32215742-8d0a-4a11-a3b7-e92873144bb4.png)
+
+- Olive Young
+
+  - 언어: Python
+  - 주요 라이브러리: `BeautifulSoup`, `selenium`, `requests`, `json`
+  - 각 카테고리 `selenium`으로 접근하여 json 형식으로 저장
+  - 상품 데이터만으로 용량이 부족하여 후기가 가장 활성화된 올리브영에서 comment 정보 parsing
+
+- Olive Young Comment
+  - 언어 : Python
+  - 주요 라이브러리 : 'selenium', 'json'
+  - 각 카테고리 상위 품목을 'selenium'으로 접근해 상품 번호와 줄글 리뷰 저장
+  - 크롤링 시간 고려해 각 상품당 최대 300개의 리뷰 크롤링
 
 ### 2. Data Storage
 
 - HDFS Cluster Settings
+
 ```
 hadoop namenode -format
 ./sbin/start-all.sh
 ```
+
 - HDFS put files
+
 ```
 hdfs dfs -put {$filename} /input
 hdfs dfs -ls /input
@@ -82,26 +92,35 @@ spark-submit ${pyspark file} --master yarn --deploy-mode cluster --executor-memo
 ```
 
 ### 4. Web Page
+
 ![image](https://user-images.githubusercontent.com/47781507/174441800-a4967ab7-e887-4a28-96bb-a0c409dfc762.png)
 
-- MongoDB
+- 언어: Javascript
+- Front-End: React
+- Back-End: Express.js
+- Database: MongoDB
 
 ### Final Structure
+
 ![image](https://user-images.githubusercontent.com/47781507/174441812-5f0a0591-87a9-4e3f-a28f-f2679e49c2d3.png)
 
 ## Demo
+
 🔗 [Webpage link](http://3.34.179.67:8080/)
 
 ![image](https://user-images.githubusercontent.com/47781507/174441844-6ea4a136-f325-48a9-affe-2aabd6d3f339.png)
+
 > 메인페이지(검색)
 
 ![image](https://user-images.githubusercontent.com/47781507/174441825-8b8e2bb6-fd6a-4203-8d0e-6780b19b1a8f.png)
+
 > 상세페이지(가격 변동 그래프, 유사 상품 추천)
 
 ## Scrum
 
 ### Notion
+
 ![image](https://user-images.githubusercontent.com/47781507/174441980-83abe3e0-f044-4f76-8af7-4c76de080c2c.png)
 
 - 매주 목요일 오후 3시 Google Meet 회의, Notion에 진행 상황 기록 <br>
-🔗 [notion link](https://sprinkle-rodent-a50.notion.site/Online-Cosmetics-Price-Comparison-204ec4397cac49cf8ea07e735db09b6f)
+  🔗 [Notion link](https://sprinkle-rodent-a50.notion.site/Online-Cosmetics-Price-Comparison-204ec4397cac49cf8ea07e735db09b6f)
