@@ -62,7 +62,7 @@ spark-submit ${pyspark file} --master yarn --deploy-mode cluster --executor-memo
 
 ## Demo
 
-[ 세부 기능 이미지 - 검색, 가격 변동 그래프, 유사 상품 추천 등 ]
+[ 세부 기능 이미지 - 검색, 가격 변동 그래프, 유사 상품 추천 등 ] <br>
 http://3.34.179.67:8080/
 
 ## Scrum
