@@ -54,6 +54,13 @@ webapp/kbeauty$ npm start
     - 각 카테고리 `selenium`으로 접근하여 json 형식으로 저장
     - 상품 데이터만으로 용량이 부족하여 후기가 가장 활성화된 올리브영에서 comment 정보 parsing
 
+  - Olive Young Comment
+    - 언어 : Python
+    - 주요 라이브러리 : 'selenium', 'json'
+    - 각 카테고리 상위 품목을 'selenium'으로 접근해 상품 번호와 줄글 리뷰 저장
+    - 크롤링 시간 고려해 각 상품당 최대 300개의 리뷰 크롤링
+
+
 ### 2. Data Storage
 
 - HDFS Cluster Settings
