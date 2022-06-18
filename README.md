@@ -30,20 +30,20 @@ webapp/kbeauty$ npm start
 
 ### 1. Data Acquisition
 
-- Data Crawling
+📍 <b>Data Crawling</b>
 
-  ![image](https://user-images.githubusercontent.com/47781507/174441677-6b31796c-c271-4838-a167-9188f81f97a8.png)
+![image](https://user-images.githubusercontent.com/47781507/174441677-6b31796c-c271-4838-a167-9188f81f97a8.png)
 
-  - Coupang
-    - Language: Python
-    - Libraries: `BeautifulSoup`, `requests`, `pandas`, `re`
-    - 각 카테고리(Depth 2까지 - 대분류, 소분류) 별 모든 페이지 링크에 `requests`로 접근하여 상품 정보 parsing
+- Coupang (43MB)
+  - Language: Python
+  - Libraries: `BeautifulSoup`, `requests`, `pandas`, `re`
+  - 각 카테고리(Depth 2까지 - 대분류, 소분류) 별 모든 페이지 링크에 `requests`로 접근하여 상품 정보 parsing
 
 ---
 
 ![image](https://user-images.githubusercontent.com/47781507/174441644-4a5524aa-616c-4b80-8b0a-0e0af2a911f6.png)
 
-- Musinsa
+- Musinsa (110MB)
   - Language: Python
   - Libraries: `BeautifulSoup`, `requests`, `json`, `multiprocessing`, `contextlib`
   - json 형식으로 모든 상품 링크 저장
@@ -54,20 +54,33 @@ webapp/kbeauty$ npm start
 
 ![image](https://user-images.githubusercontent.com/47781507/174441656-32215742-8d0a-4a11-a3b7-e92873144bb4.png)
 
-- Olive Young
+- Olive Young (112MB)
 
   - Language: Python
   - Libraries: `BeautifulSoup`, `selenium`, `requests`, `json`
   - 각 카테고리 `selenium`으로 접근하여 json 형식으로 저장
   - 상품 데이터만으로 용량이 부족하여 후기가 가장 활성화된 올리브영에서 comment 정보 parsing
 
-- Olive Young Comment
+- Olive Young Comment (582MB)
   - Language : Python
   - Libraries : 'selenium', 'json'
   - 각 카테고리 상위 품목을 'selenium'으로 접근해 상품 번호와 줄글 리뷰 저장
   - 크롤링 시간 고려해 각 상품당 최대 300개의 리뷰 크롤링
 
+📍 <b>Distributing Crawler</b>
+
+- Server: AWS EC2 instance
+- Crontab 활용하여 매일 crawling
+
+```
+# 0 0 * * * python3 /home/musinsa/app.py
+# 0 0 * * * python3 /home/ubuntu/olive_crawl/olive_crawl.py
+# 0 0 * * * python3 /home/coupang/crawl.py
+```
+
 ### 2. Data Storage
+
+- 모든 크롤링 결과 파일: hdfs:///input에 저장
 
 - HDFS Cluster Settings
 
@@ -90,6 +103,18 @@ hdfs dfs -ls /input
 ```
 spark-submit ${pyspark file} --master yarn --deploy-mode cluster --executor-memory 512m --driver-memory 512m
 ```
+
+- 상품 크롤링 결과 파일
+  - 정규식 활용(`regexp_extract`, `regexp_replace`)하여 상품명 | 브랜드 | 용량 등 분리
+  - 할인율과 가성비(단위 용량 당 가격) 계산
+  - 불필요한 column 제거
+  - Column명 통일
+    <br>
+- 올리브영 리뷰 크롤링 결과 파일
+  - 목표: 각 상품별 가장 많이 쓰인 단어 추출
+  - 특수 문자 제거, `split`으로 review 정보 분리
+  - 단어 수 계산 후 count 기준으로 정렬
+  - Blank word, Stop word, Brand/Category명 제거
 
 ### 4. Web Page
 
