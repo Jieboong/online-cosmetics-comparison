@@ -32,7 +32,7 @@ webapp/kbeauty$ npm start
 
 📍 <b>Data Crawling</b>
 
-![image](https://user-images.githubusercontent.com/47781507/174441677-6b31796c-c271-4838-a167-9188f81f97a8.png)
+<img src = "https://user-images.githubusercontent.com/47781507/174441677-6b31796c-c271-4838-a167-9188f81f97a8.png" width="80%" height="60%">
 
 - Coupang (43MB)
   - Language: Python
@@ -41,7 +41,7 @@ webapp/kbeauty$ npm start
 
 ---
 
-![image](https://user-images.githubusercontent.com/47781507/174441644-4a5524aa-616c-4b80-8b0a-0e0af2a911f6.png)
+<img src = "https://user-images.githubusercontent.com/47781507/174441644-4a5524aa-616c-4b80-8b0a-0e0af2a911f6.png" width="80%" height="60%">
 
 - Musinsa (110MB)
   - Language: Python
@@ -52,7 +52,7 @@ webapp/kbeauty$ npm start
 
 ---
 
-![image](https://user-images.githubusercontent.com/47781507/174441656-32215742-8d0a-4a11-a3b7-e92873144bb4.png)
+<img src = "https://user-images.githubusercontent.com/47781507/174441656-32215742-8d0a-4a11-a3b7-e92873144bb4.png" width="80%" height="60%">
 
 - Olive Young (112MB)
 
@@ -109,7 +109,7 @@ spark-submit ${pyspark file} --master yarn --deploy-mode cluster --executor-memo
   - 할인율과 가성비(단위 용량 당 가격) 계산
   - 불필요한 column 제거
   - Column명 통일
-    <br>
+    <br><br>
 - 올리브영 리뷰 크롤링 결과 파일
   - 목표: 각 상품별 가장 많이 쓰인 단어 추출
   - 특수 문자 제거, `split`으로 review 정보 분리
@@ -144,8 +144,8 @@ spark-submit ${pyspark file} --master yarn --deploy-mode cluster --executor-memo
 ## Scrum
 
 ### Notion
-
-![image](https://user-images.githubusercontent.com/47781507/174441980-83abe3e0-f044-4f76-8af7-4c76de080c2c.png)
+<img src = "https://user-images.githubusercontent.com/47781507/174443877-ba0416d9-88ae-43fc-955e-b839c6def4d8.png" width="60%" height="80%">
+<img src = "https://user-images.githubusercontent.com/47781507/174443881-ccd2a516-b114-4755-bb43-593b1e2ef33d.png" width="60%" height="80%">
 
 - 매주 목요일 오후 3시 Google Meet 회의, Notion에 진행 상황 기록 <br>
   🔗 [Notion link](https://sprinkle-rodent-a50.notion.site/Online-Cosmetics-Price-Comparison-204ec4397cac49cf8ea07e735db09b6f)
