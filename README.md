@@ -35,8 +35,8 @@ webapp/kbeauty$ npm start
   ![image](https://user-images.githubusercontent.com/47781507/174441677-6b31796c-c271-4838-a167-9188f81f97a8.png)
 
   - Coupang
-    - 언어: Python
-    - 주요 라이브러리: `BeautifulSoup`, `requests`, `pandas`, `re`
+    - Language: Python
+    - Libraries: `BeautifulSoup`, `requests`, `pandas`, `re`
     - 각 카테고리(Depth 2까지 - 대분류, 소분류) 별 모든 페이지 링크에 `requests`로 접근하여 상품 정보 parsing
 
 ---
@@ -44,8 +44,8 @@ webapp/kbeauty$ npm start
 ![image](https://user-images.githubusercontent.com/47781507/174441644-4a5524aa-616c-4b80-8b0a-0e0af2a911f6.png)
 
 - Musinsa
-  - 언어: Python
-  - 주요 라이브러리: `BeautifulSoup`, `requests`, `json`, `multiprocessing`, `contextlib`
+  - Language: Python
+  - Libraries: `BeautifulSoup`, `requests`, `json`, `multiprocessing`, `contextlib`
   - json 형식으로 모든 상품 링크 저장
   - 각 링크에 `requests`로 접근하여 상품 정보 parsing
   - `multiprocessing`으로 크롤링 속도 개선
@@ -56,14 +56,14 @@ webapp/kbeauty$ npm start
 
 - Olive Young
 
-  - 언어: Python
-  - 주요 라이브러리: `BeautifulSoup`, `selenium`, `requests`, `json`
+  - Language: Python
+  - Libraries: `BeautifulSoup`, `selenium`, `requests`, `json`
   - 각 카테고리 `selenium`으로 접근하여 json 형식으로 저장
   - 상품 데이터만으로 용량이 부족하여 후기가 가장 활성화된 올리브영에서 comment 정보 parsing
 
 - Olive Young Comment
-  - 언어 : Python
-  - 주요 라이브러리 : 'selenium', 'json'
+  - Language : Python
+  - Libraries : 'selenium', 'json'
   - 각 카테고리 상위 품목을 'selenium'으로 접근해 상품 번호와 줄글 리뷰 저장
   - 크롤링 시간 고려해 각 상품당 최대 300개의 리뷰 크롤링
 
@@ -95,8 +95,8 @@ spark-submit ${pyspark file} --master yarn --deploy-mode cluster --executor-memo
 
 ![image](https://user-images.githubusercontent.com/47781507/174441800-a4967ab7-e887-4a28-96bb-a0c409dfc762.png)
 
-- 언어: Javascript
-- Front-End: React
+- Language: Javascript
+- Front-End: React, Tailwind CSS
 - Back-End: Express.js
 - Database: MongoDB
 
